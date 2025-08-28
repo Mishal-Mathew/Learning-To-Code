@@ -15,8 +15,8 @@ spread_sheet = [["Name   "," Age ","Element  "],          # 2-D Data structure l
                 ["Aang   ",112,"  Airbender"],
                 ["Katara " ,  13 , "   Waterbender"],
                 ["Toph   " ,  12  ,"   Earthbender"],
-                ["Suko   ",   14   ,"   Non-bender"],
-                ["Appa   ", 257, " Airbender"]]
+                ["Suko   ",   14   ,"   Non-bender"]]
+                
 csv_file = "C:/Users/ASUS/OneDrive/Desktop/csv_file.csv"
 
 try:
