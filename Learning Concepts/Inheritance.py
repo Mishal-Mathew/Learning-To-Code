@@ -25,7 +25,6 @@ class Cat(Animal):
 Dog = Dog("Done")                                 # Don't forget the order🤓
 Cat  = Cat("Rish")                                # Class---Constructor(if needed)---Method----Object
 Cat.eat()
-Dog.speak()
 
 
 #This is multiple Inheritance
@@ -40,8 +39,7 @@ class Predator(Animal):                         #Inheriting from Animal class
         print(f"{self.name} is hunting")
 
 class Deer(Prey):                    #Deer is inheriting from Prey ,which itself is inheriting from Animal
-    def speak(self):
-        print("Baa!")                   #This is multi-level
+    pass                                 #This is multi-level               
 
 class Lion(Predator):
     pass
@@ -54,9 +52,8 @@ Deer = Deer("Puerto Rico")
 Pambu = Snake("Meme")
 
 Pambu.hunt()
-Pambu.flee()
-Deer.speak()
-try:
-    Lion.flee()          #Lion can't flee because it is not inheriting from Prey class
-except AttributeError as e:
-    print(f"Error: {e} - Lion cannot flee because it does not inherit from Prey.")
+
+
+
+
+
