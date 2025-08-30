@@ -1,5 +1,4 @@
 
-
 def add_sprinkles(func):
     def wrapper(*args , **kwargs):
         print("Sprinkles has been added")
