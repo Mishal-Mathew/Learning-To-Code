@@ -12,7 +12,7 @@ def alarm_clock(alarm_time):
         print(current_time.strftime("%H:%M:%S"))
         time.sleep(1)
 
-        if current_time == alarm_time:
+        if current_time >= alarm_time:
             running = False
             print("Wake Up!")
             pygame.mixer.init()
