@@ -1,44 +1,42 @@
 #py -m pip install pygame
-import time 
 import datetime
+import time
 import pygame
 
-def alarm(a_time):
-
+def alarm_clock(alarm_time):
+    music = "Learning projects\\Claim To Fame - The Grey Room _ Clark Sims.mp3"
     running = True
-    music_path = "Rain Over Kyoto Station - The Mini Vandals.mp3"
-
     while running:
-
-        c_time = datetime.datetime.now().strftime("%H:%M:%S")
-        print(c_time)
+        current_time = datetime.datetime.now().strftime("%H:%M:%S")
+        print(current_time)
         time.sleep(1)
 
-        if c_time == a_time:
-            print("WAKE UP!")
+        if current_time == alarm_time:
             running= False
-    
-    pygame.mixer.init()
-    pygame.mixer.music.load(music_path)
-    pygame.mixer.music.play()
+            print("Wake Up!")
+            pygame.mixer.init()
+            pygame.mixer.music.load(music)
+            pygame.mixer.music.play()
 
-    while pygame.mixer.music.get_busy:
-        time.sleep(1)
-
-
-if __name__ == '__main__':
+            while pygame.mixer.music.get_busy():
+                time.sleep(1)
+        
+def main():
     
-    a_time = input("Enter the time (HH:MM:SS): ")
-    c_time = datetime.datetime.now().strftime("%H:%M:%S")
-    
-    if a_time < c_time:
-        print("Invalid time")
+    alarm_time = input("Enter the alarm time (HH:MM:SS): ")
+    #alarm_time = datetime.datetime.strptime(alarm_time,"%H:%M:%S").time()
+    current_time=datetime.datetime.now().strftime("%H:%M:%S")
+
+    if alarm_time.isalnum():
+        print("Please enter a valid time in HH:MM:SS")
+
+    elif alarm_time <= current_time:
+        print("Alarm time should not have passed") 
     
     else:
-        try:
-            a_time = datetime.datetime.strptime(a_time,"%H:%M:%S").time()
-            alarm(a_time)
-        except ValueError:
-            print("Please enter a time in HH:MM:SS format")
-        except exceptions:
-            print("Something went wrong!")
+        alarm_clock(alarm_time)
+
+
+
+if __name__ == "__main__":
+    main()
