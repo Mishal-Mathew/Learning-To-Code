@@ -16,8 +16,5 @@ current_time = current_time.strftime(f"Current time:%H:%M:%S \n{date}\nCurrent d
 user_string = "22:04:40"
 user_time = datetime.datetime.strptime(user_string , "%H:%M:%S").time() # The .time() returns the time part only while date() gives date only
 
-print(user_time)
-current_time = datetime.strptime(current_time ,  "%H:%M:%S") #strptime changes string to datetime format
-
 
 print(current_time)
